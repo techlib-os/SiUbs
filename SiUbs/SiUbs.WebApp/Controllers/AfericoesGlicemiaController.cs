@@ -10,6 +10,7 @@ using SiUbs.WebApp.Models;
 
 namespace SiUbs.WebApp.Controllers
 {
+    [Authorize]
     public class AfericoesGlicemiaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

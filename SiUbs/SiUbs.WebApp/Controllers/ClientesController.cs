@@ -6,6 +6,7 @@ using SiUbs.WebApp.Models;
 
 namespace SiUbs.WebApp.Controllers
 {
+    [Authorize]
     public class ClientesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
