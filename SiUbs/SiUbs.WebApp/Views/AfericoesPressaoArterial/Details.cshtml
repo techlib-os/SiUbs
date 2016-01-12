@@ -1,0 +1,50 @@
+﻿@model SiUbs.WebApp.Models.AfericaoPressaoArterial
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AfericaoPressaoArterial</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataHoraAfericao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataHoraAfericao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sistolica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sistolica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diastolica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diastolica)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,56 @@
+﻿@model SiUbs.WebApp.Models.AfericaoPressaoArterial
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AfericaoPressaoArterial</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataHoraAfericao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataHoraAfericao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sistolica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sistolica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diastolica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diastolica)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
