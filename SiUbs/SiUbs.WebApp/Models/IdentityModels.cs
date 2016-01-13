@@ -43,6 +43,5 @@ namespace SiUbs.WebApp.Models
         public DbSet<AfericaoGlicemia> AfericoesGlicemia { get; set; }
         public DbSet<AfericaoPressaoArterial> AfericoesPressaoArterial { get; set; }
 
-        public System.Data.Entity.DbSet<SiUbs.WebApp.Models.ApplicationUser> ApplicationUser { get; set; }
     }
 }

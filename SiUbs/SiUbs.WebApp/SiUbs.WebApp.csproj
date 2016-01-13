@@ -190,6 +190,7 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\SiUbsDatabaseInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -210,6 +211,7 @@
     <Content Include="Views\AfericaoGlicemias\Index.cshtml" />
     <Content Include="Views\AfericoesGlicemia\ByCliente.cshtml" />
     <Content Include="Views\AfericoesPressaoArterial\ByCliente.cshtml" />
+    <Content Include="Views\Manage\Users.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SiUbs.WebApp.Models;
+using System.Data.Entity;
 
 namespace SiUbs.WebApp.Controllers
 {
@@ -48,6 +49,13 @@ namespace SiUbs.WebApp.Controllers
             {
                 _userManager = value;
             }
+        }
+
+        //
+        // GET: /Users/
+        public async Task<ActionResult> Users()
+        {
+            return View(await UserManager.Users.ToListAsync());
         }
 
         //
