@@ -49,7 +49,8 @@ namespace SiUbs.WebApp.Controllers
             {
                 db.Clientes.Add(cliente);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                Request.RequestType = "POST";
+                return RedirectToAction("SearchByName", new { name = cliente.Nome });
             }
 
             return View(cliente);
@@ -81,7 +82,7 @@ namespace SiUbs.WebApp.Controllers
             {
                 db.Entry(cliente).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new { id = cliente.Id });
             }
             return View(cliente);
         }
@@ -110,6 +111,14 @@ namespace SiUbs.WebApp.Controllers
             db.Clientes.Remove(cliente);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        [HttpGet, ActionName("SearchByName")]
+        [Route("{SearchByName/name:string}")]
+        public ActionResult SearchByName(string name = "@")
+        {
+            var result = db.Clientes.Where(c => c.Nome.Contains(name));
+            return View(result);
         }
 
         protected override void Dispose(bool disposing)

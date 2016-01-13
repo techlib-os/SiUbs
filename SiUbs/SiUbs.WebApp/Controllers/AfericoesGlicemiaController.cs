@@ -22,6 +22,14 @@ namespace SiUbs.WebApp.Controllers
             return View(afericoesGlicemia.ToList());
         }
 
+        // GET: AfericoesGlicemia/ByCliente/5
+        public ActionResult ByCliente(int id)
+        {
+            ViewBag.Cliente = id;
+            var afericaoGlicemia = db.AfericoesGlicemia.Where(g => g.ClienteId == id);
+            return View(afericaoGlicemia);
+        }
+
         // GET: AfericoesGlicemia/Details/5
         public ActionResult Details(int? id)
         {
@@ -38,9 +46,9 @@ namespace SiUbs.WebApp.Controllers
         }
 
         // GET: AfericoesGlicemia/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nome");
+            ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nome",id);
             return View();
         }
 
@@ -55,7 +63,7 @@ namespace SiUbs.WebApp.Controllers
             {
                 db.AfericoesGlicemia.Add(afericaoGlicemia);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ByCliente", new { id = afericaoGlicemia.ClienteId });
             }
 
             ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nome", afericaoGlicemia.ClienteId);
@@ -89,7 +97,7 @@ namespace SiUbs.WebApp.Controllers
             {
                 db.Entry(afericaoGlicemia).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ByCliente", new { id = afericaoGlicemia.ClienteId });
             }
             ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nome", afericaoGlicemia.ClienteId);
             return View(afericaoGlicemia);
@@ -118,7 +126,7 @@ namespace SiUbs.WebApp.Controllers
             AfericaoGlicemia afericaoGlicemia = db.AfericoesGlicemia.Find(id);
             db.AfericoesGlicemia.Remove(afericaoGlicemia);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("ByCliente", new { id = afericaoGlicemia.ClienteId });
         }
 
         protected override void Dispose(bool disposing)

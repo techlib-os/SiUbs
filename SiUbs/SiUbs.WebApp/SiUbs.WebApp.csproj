@@ -202,6 +202,14 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Views\Clientes\SearchByName.cshtml" />
+    <Content Include="Views\AfericaoGlicemias\Create.cshtml" />
+    <Content Include="Views\AfericaoGlicemias\Delete.cshtml" />
+    <Content Include="Views\AfericaoGlicemias\Details.cshtml" />
+    <Content Include="Views\AfericaoGlicemias\Edit.cshtml" />
+    <Content Include="Views\AfericaoGlicemias\Index.cshtml" />
+    <Content Include="Views\AfericoesGlicemia\ByCliente.cshtml" />
+    <Content Include="Views\AfericoesPressaoArterial\ByCliente.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

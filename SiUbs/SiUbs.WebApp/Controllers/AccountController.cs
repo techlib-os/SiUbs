@@ -155,7 +155,7 @@ namespace SiUbs.WebApp.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // Para obter mais informações sobre como ativar a confirmação de senha e a redefinição de senha, visite http://go.microsoft.com/fwlink/?LinkID=320771
                     // Enviar um email com este link
